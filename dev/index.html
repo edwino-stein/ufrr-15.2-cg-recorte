@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Trabalho de Computação Gráfica - Rasterização de Circunferência</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/Application.js"></script>
+        <script type="text/javascript" src="js/app/App.js"></script>
+    </head>
+    <body>
+        <div id="screen">
+            <div id="viewbox">
+                <div>
+                    <div class="col-xs-6">Original</div>
+                    <div class="col-xs-6">Cortada</div>
+                </div>
+                <svg id="svg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" viewBox="0 0 400 400"></svg>
+                <canvas id="canvas" width="400" height="400"></canvas>
+                <div id="time">
+                  recorte: <span class="clipping">0</span>ms |
+                  rasterização: <span class="raster">0</span>ms |
+                  preechimento: <span class="fill">0</span>ms
+                </div>
+            </div>
+        </div>
+        <div id="panel" class="container-fluid" >
+
+            <div class="col-xs-3">
+                <label>Figura 1</label>
+                <a class="polygon" data-figure="0"><span></span></a>
+            </div>
+            <div class="col-xs-3">
+                <label>Figura 2</label>
+                <a class="polygon" data-figure="1"><span></span></a>
+            </div>
+            <div class="col-xs-3">
+                <label>Figura 3</label>
+                <a class="polygon" data-figure="2"><span></span></a>
+            </div>
+            <div class="col-xs-3">
+                <label>Figura 4</label>
+                <a class="polygon" data-figure="3"><span></span></a>
+            </div>
+
+            <div class="col-xs-12 footer">
+                Desenvolvido por Edwino Stein
+            </div>
+        </div>
+    </body>
+</html>

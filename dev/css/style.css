@@ -1,0 +1,145 @@
+body{
+    background-color: #f7f7f7 !important;
+    background-image: url('../img/bg.png');
+    padding: 0;
+    margin: 0;
+}
+
+#screen{
+    margin: 15px 0 10px;
+    text-align: center;
+    padding: 25px 0;
+}
+
+#viewbox{
+    display: inline-block;
+    position: relative;
+    border: 3px solid #eee;
+    border-right-width: 4px;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    background-color: #fff;
+    padding: 5px;
+    padding-bottom: 0;
+    width: 825px;
+}
+
+#svg{
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    width: 400px;
+    border-spacing: 1px;
+    border: 1px solid #CFDCE4;
+}
+
+#canvas{
+    background-color: transparent;
+    width: 400px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #CFDCE4;
+}
+
+#viewbox .col-xs-6{
+    padding: 0;
+    color: #777;
+    font-size: 12px;
+    color: #777;
+    text-transform: uppercase;
+}
+
+#panel{
+    position: relative;
+    background-color: #fff;
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px 15px 30px;
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.3);
+    border-radius: 1px 1px 0 0;
+}
+
+#panel h4{
+    padding: 0 15px;
+    margin: 10px 0 5px;
+}
+
+#panel label{
+    display: block;
+    font-size: 9px;
+    color: #777;
+    text-transform: uppercase;
+}
+
+
+#panel .polygon{
+    display: block;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    margin-top: 3px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ABACAD;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+#panel .polygon > span{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+    background-position: 0 0;
+}
+
+#panel .polygon:hover {
+    -moz-appearance: number-input;
+    border-color: #333;
+}
+
+#panel .polygon.active {
+    border-color: #2196F3;
+    box-shadow: 0px 2px 1px -1px rgba(33,150,243,0.5);
+    -moz-appearance: number-input;
+}
+
+#panel .polygon[data-figure="0"] > span{
+    background-image: url('../img/recortes.png');
+    background-position: -1px -35px;
+    background-size: 65px 65px;
+}
+
+#panel .polygon[data-figure="1"] > span{
+    background-image: url('../img/recortes.png');
+    background-position: -1px 0px;
+    background-size: 65px 65px;
+}
+
+#panel .polygon[data-figure="2"] > span{
+    background-image: url('../img/recortes.png');
+    background-position: -34px 0px;
+    background-size: 65px 65px;
+}
+
+#panel .polygon[data-figure="3"] > span{
+    background-image: url('../img/recortes.png');
+    background-position: -34px -34px;
+    background-size: 65px 65px;
+}
+
+#panel .footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-size: 11px;
+    color: #777;
+}
+
+#time{
+    position: absolute;
+    right: 0;
+    font-size: 12px;
+    bottom: -23px;
+    color: #777;
+}

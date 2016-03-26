@@ -10,7 +10,7 @@ App.define('View.Svg', {
         },
         {
             type: 'polygon',
-            points: '110,295 110,355 165,355 165,400 235,400 235,355 290,355 290,295 235,295 235,250 165,250 165,295',
+            points: '110,295 110,355 165,355 165,399 235,399 235,355 290,355 290,295 235,295 235,250 165,250 165,295',
             seed: '200,295'
         },
         {
@@ -117,7 +117,8 @@ App.define('View.Svg', {
                 this.newPoint(this.viewPort.x + this.viewPort.width, this.viewPort.y + this.viewPort.height),
                 this.newPoint(this.viewPort.x, this.viewPort.y + this.viewPort.height)
             ],
-            seed: null
+            seed: null,
+            stroke: this.viewPort.strokeRGB
         };
     },
 

@@ -4,7 +4,9 @@ var App = new Application({
         'View.Svg',
         'View.Canvas',
         'Controller.RasterAlgorithms',
-        'Controller.FillAlgorithms'
+        'Controller.FillAlgorithms',
+        'Controller.ClippingAlgorithm',
+        'Controller.Main'
     ],
     modulesPath: 'js/app/'
 });

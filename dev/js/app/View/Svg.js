@@ -37,8 +37,8 @@ App.define('View.Svg', {
         stroke: '#FF6767'
     },
 
-    fill: '#69FB69',
-    stroke: '#208A20',
+    fill: '#00CE9D',
+    stroke: '#006D53',
     strokeWidth: '1px',
 
     shapeSelected: '',

@@ -48,8 +48,8 @@ App.define('Controller.Main', {
             me.render();
         });
 
-        me.fillColor = new me.util.Color(105, 251, 105);
-        me.borderColor = new me.util.Color(32, 138, 32);
+        me.fillColor = new me.util.Color(0, 206, 157);
+        me.borderColor = new me.util.Color(0, 109, 83);
 
         me.svg.setShape(0);
         me.render();

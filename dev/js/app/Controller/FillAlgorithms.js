@@ -10,13 +10,15 @@ App.define('Controller.FillAlgorithms', {
             for(var i in polygon.seed){
                 seed = this.toCanvasPoint(polygon.seed[i].x, polygon.seed[i].y);
                 targetColor = this.canvas.getPixelColor(seed);
-                this.rFloodFill(seed, color, targetColor);
+                this.rFloodFill(seed, color, targetColor, true);
+                this.rFloodFill(seed, color, targetColor, false);
             }
         }
         else{
             seed = this.toCanvasPoint(polygon.seed.x, polygon.seed.y);
             targetColor = this.canvas.getPixelColor(seed);
-            this.rFloodFill(seed, color, targetColor);
+            this.rFloodFill(seed, color, targetColor, true);
+            this.rFloodFill(seed, color, targetColor, false);
         }
 
         return this.getTimeStamp() - now;
@@ -25,24 +27,32 @@ App.define('Controller.FillAlgorithms', {
     /**
         Flood Fill recursiva
     */
-    rFloodFill: function(pixel, color, targetColor){
+    rFloodFill: function(pixel, color, targetColor, down){
 
-        if(!targetColor.isEqual(this.canvas.getPixelColor(pixel)))
-            return;
+        var p = this.newPoint(pixel.x, pixel.y);
+        while (true) {
+            if(!targetColor.isEqual(this.canvas.getPixelColor(p))) break;
+            this.canvas.activePixel(p, color, false);
+            p.x++;
+        }
 
-        this.canvas.activePixel(pixel, color, false);
+        p = this.newPoint(pixel.x - 1, pixel.y);
+        while (true) {
+            if(!targetColor.isEqual(this.canvas.getPixelColor(p))) break;
+            this.canvas.activePixel(p, color, false);
+            p.x--;
+        }
 
-        //Pixel da direita
-        this.rFloodFill(this.newPoint(pixel.x + 1, pixel.y), color, targetColor);
-
-        //Pixel de cima
-        this.rFloodFill(this.newPoint(pixel.x, pixel.y + 1), color, targetColor);
-
-        //Pixel da esquerda
-        this.rFloodFill(this.newPoint(pixel.x - 1, pixel.y), color, targetColor);
-
-        //Pixel de baixo
-        this.rFloodFill(this.newPoint(pixel.x, pixel.y - 1), color, targetColor);
+        if(down){
+            p  = this.newPoint(pixel.x, pixel.y + 1);
+            if(!targetColor.isEqual(this.canvas.getPixelColor(p))) return;
+            this.rFloodFill(p, color, targetColor, down);
+        }
+        else{
+            p  = this.newPoint(pixel.x, pixel.y - 1);
+            if(!targetColor.isEqual(this.canvas.getPixelColor(p))) return;
+            this.rFloodFill(p, color, targetColor, down);
+        }
     },
 
     newPoint: function(x, y){
